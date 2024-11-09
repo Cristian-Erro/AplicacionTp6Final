@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplicacionTp6.Views.CarritoPage"
+             BackgroundColor="#F5F5F5"
+             Title="Carrito de Compras">
+    <StackLayout Padding="15" Spacing="20">
+
+        
+        <Label Text="Tu Carrito"
+               FontSize="36"
+               FontAttributes="Bold"
+               TextColor="#00796B"
+               HorizontalOptions="Center"
+               VerticalOptions="Start" />
+
+        
+        <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Always">
+            <StackLayout Orientation="Horizontal" Spacing="15">
+
+                
+                <Frame CornerRadius="20" BackgroundColor="#F5F5F5" WidthRequest="200" Padding="10" HasShadow="True">
+                    <StackLayout Spacing="10">
+                        <Image Source="producto1.png" HeightRequest="120" Aspect="AspectFit"/>
+                        <Label Text="Producto 1" FontSize="Medium" FontAttributes="Bold" TextColor="#333"/>
+                        <Label Text="$150.00" FontSize="Medium" TextColor="#00796B"/>
+                    </StackLayout>
+                </Frame>
+
+                
+                <Frame CornerRadius="20" BackgroundColor="#F5F5F5" WidthRequest="200" Padding="10" HasShadow="True">
+                    <StackLayout Spacing="10">
+                        <Image Source="producto2.png" HeightRequest="120" Aspect="AspectFit"/>
+                        <Label Text="Producto 2" FontSize="Medium" FontAttributes="Bold" TextColor="#333"/>
+                        <Label Text="$250.00" FontSize="Medium" TextColor="#00796B"/>
+                    </StackLayout>
+                </Frame>
+
+                
+                <Frame CornerRadius="20" BackgroundColor="#F5F5F5" WidthRequest="200" Padding="10" HasShadow="True">
+                    <StackLayout Spacing="10">
+                        <Image Source="producto3.png" HeightRequest="120" Aspect="AspectFit"/>
+                        <Label Text="Producto 3" FontSize="Medium" FontAttributes="Bold" TextColor="#333"/>
+                        <Label Text="$100.00" FontSize="Medium" TextColor="#00796B"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame CornerRadius="20" BackgroundColor="#F5F5F5" WidthRequest="200" Padding="10" HasShadow="True">
+                    <StackLayout Spacing="10">
+                        <Image Source="producto4.png" HeightRequest="120" Aspect="AspectFit"/>
+                        <Label Text="Producto 4" FontSize="Medium" FontAttributes="Bold" TextColor="#333"/>
+                        <Label Text="$300.00" FontSize="Medium" TextColor="#00796B"/>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+
+        <BoxView HeightRequest="2" BackgroundColor="LightGray" Margin="0,10"/>
+
+        
+        <StackLayout Orientation="Vertical" Spacing="10">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Padding="0,5">
+                <Label Text="Total de Productos:"
+                       FontSize="Medium"
+                       FontAttributes="Bold"
+                       TextColor="#00796B"
+                       VerticalOptions="Center" />
+                <Label Text="4" 
+                       FontSize="Medium"
+                       TextColor="#333"
+                       VerticalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Padding="0,5">
+                <Label Text="Total a pagar:"
+                       FontSize="Medium"
+                       FontAttributes="Bold"
+                       TextColor="#00796B"
+                       VerticalOptions="Center" />
+                <Label Text="$800.00" 
+                       FontSize="Medium"
+                       TextColor="#333"
+                       VerticalOptions="Center" />
+            </StackLayout>
+        </StackLayout>
+
+       
+        <Button Text="Realizar Compra"
+                BackgroundColor="#00796B"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="20"
+                HeightRequest="50"
+                HorizontalOptions="Fill"
+                VerticalOptions="End" />
+    </StackLayout>
+</ContentPage>

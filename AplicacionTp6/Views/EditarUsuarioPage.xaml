@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplicacionTp6.Views.EditarUsuarioPage"
+             xmlns:vm="clr-namespace:AplicacionTp6.ViewModels"
+             x:DataType="vm:EditarUsuarioViewModel"
+             Title="{Binding Title}"
+             BackgroundColor="#bdd1de">
+
+    
+    <VerticalStackLayout Padding="20">
+
+        
+        <Image Source="cargando.gif"
+               IsVisible="{Binding IsBusy}" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center"
+               HeightRequest="100"
+               WidthRequest="100"/>
+
+        
+        <Frame BackgroundColor="#84abaa" CornerRadius="15" Padding="15" Margin="0,10,0,10" HasShadow="True">
+            <VerticalStackLayout>
+                <Label Text="Editando la informacíon Usuario" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" TextColor="#00796B" />
+                <Label Text="ID del usuario" HorizontalOptions="Center"></Label>
+                <Entry  Placeholder="Id del Usuario" 
+                        PlaceholderColor="Gray"
+                        Text="{Binding NuevoUsuario.idUsuario}" 
+                        Margin="0,5" />
+                <Label Text="Nombre del usuario" HorizontalOptions="Center"></Label>
+                <Entry Placeholder="Nombre del Usuario" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding NuevoUsuario.nombreUsuario}" 
+                       Margin="0,5" />
+                <Label Text="Apellido del usuario" HorizontalOptions="Center"></Label>
+                <Entry Placeholder="Apellido del Usuario" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding NuevoUsuario.apellido}" 
+                       Margin="0,5" />
+                <Label Text="Mail del usuario" HorizontalOptions="Center"></Label>
+                <Entry Placeholder="Correo Electrónico" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding NuevoUsuario.mail}" 
+                       Margin="0,5" />
+
+                <Label Text="Telefono del usuario" HorizontalOptions="Center"></Label>
+                <Entry Placeholder="Telefono" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding NuevoUsuario.numTelefono}" 
+                       IsPassword="True" 
+                       Margin="0,5" />
+                <Label Text="User" HorizontalOptions="Center"></Label>
+                <Entry Placeholder="User" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding NuevoUsuario.username}" 
+                       Margin="0,5" />
+                <Label Text="Contraseña" HorizontalOptions="Center"></Label>
+                <Entry  Placeholder="Contraseña" 
+                        PlaceholderColor="Gray"
+                        Text="{Binding NuevoUsuario.contrasena}" 
+                        Margin="0,5" />
+
+                <Button Text="Editar Usuario"
+                        Command="{Binding EditarUsuarioCommand}" 
+                        BackgroundColor="#00796B"
+                        TextColor="White"
+                        Margin="0,15,0,0"
+                        CornerRadius="10"
+                        FontSize="Medium"/>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

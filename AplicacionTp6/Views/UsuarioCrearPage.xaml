@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplicacionTp6.Views.UsuarioCrearPage"
+             xmlns:vm="clr-namespace:AplicacionTp6.ViewModels"
+             x:DataType="vm:UsuarioCrearViewModel"
+             Title="{Binding Title}">
+
+    <!-- Envolver todo en un ScrollView para permitir el desplazamiento -->
+    <ScrollView>
+        <VerticalStackLayout Padding="20" BackgroundColor="#F5F5F5">
+
+            <Frame Padding="20" BackgroundColor="White" CornerRadius="10" HasShadow="True">
+                <VerticalStackLayout>
+
+                    <Label Text="Crear Usuario Nuevo" 
+                           FontAttributes="Bold" 
+                           FontSize="24" 
+                           HorizontalOptions="Center" 
+                           TextColor="#00796B" />
+
+                    <Label Text="Id del usuario" TextColor="Black" />
+                    <Entry 
+                           PlaceholderColor="Gray" 
+                           TextColor="Black" 
+                           BackgroundColor="#E0E0E0" 
+                           Margin="0,0,0,10" Text="{Binding NuevoUsuario.idUsuario}"/>
+
+                    <Label Text="Nombre del usuario" TextColor="Black" />
+                    <Entry 
+                           PlaceholderColor="Gray" 
+                           TextColor="Black" 
+                           BackgroundColor="#E0E0E0" 
+                           Margin="0,0,0,10" Text="{Binding NuevoUsuario.nombreUsuario}"/>
+
+                    <Label Text="Apellido del usuario" TextColor="Black" />
+                    <Entry 
+                            PlaceholderColor="Gray" 
+                            TextColor="Black" 
+                            BackgroundColor="#E0E0E0" 
+                            Margin="0,0,0,10" Text="{Binding NuevoUsuario.apellido}"/>
+
+
+                    <Label Text="Correo del usuario" TextColor="Black" />
+                    <Entry 
+                           PlaceholderColor="Gray" 
+                           TextColor="Black" 
+                           BackgroundColor="#E0E0E0" 
+                           Margin="0,0,0,10" Text="{Binding NuevoUsuario.mail}"/>
+
+                    <Label Text="Telefono del usuario" TextColor="Black" />
+                    <Entry 
+                            PlaceholderColor="Gray" 
+                            TextColor="Black" 
+                            BackgroundColor="#E0E0E0" 
+                            Margin="0,0,0,10" Text="{Binding NuevoUsuario.numTelefono}"/>
+
+                    <Label Text="Username del usuario" TextColor="Black" />
+                    <Entry 
+                            PlaceholderColor="Gray" 
+                            TextColor="Black" 
+                            BackgroundColor="#E0E0E0" 
+                            Margin="0,0,0,10" Text="{Binding NuevoUsuario.username}"/>
+
+                    <Label Text="Contraseña" TextColor="Black" />
+                    <Entry 
+                           IsPassword="True"
+                           PlaceholderColor="Gray" 
+                           TextColor="Black" 
+                           BackgroundColor="#E0E0E0" 
+                           Margin="0,0,0,10" Text="{Binding NuevoUsuario.contrasena}"/>
+
+                    <Button Text="Crear Usuario"
+                            BackgroundColor="#00796B"
+                            TextColor="White"
+                            Margin="0,10,0,0"
+                            CornerRadius="5" Command="{Binding CrearUsuarioCommand}"/>
+
+                    <Button Text="Volver"
+                            BackgroundColor="#E53935"
+                            TextColor="White"
+                            Margin="0,10,0,0" 
+                            Clicked="Button_Clicked"
+                            CornerRadius="5" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

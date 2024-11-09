@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplicacionTp6.Views.EditarProductoPage"
+             xmlns:vm="clr-namespace:AplicacionTp6.ViewModels"
+             x:DataType="vm:EditarProductoViewModel"
+             Title="{Binding Title}"
+             
+             BackgroundColor="#bdd1de">
+    
+
+    <VerticalStackLayout Padding="20">
+
+        
+        <Image Source="cargando.gif"
+               IsVisible="{Binding IsBusy}" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center"
+               HeightRequest="100"
+               WidthRequest="100"/>
+
+        
+        <Frame BackgroundColor="#84abaa" CornerRadius="15" Padding="15" Margin="0,10,0,10" HasShadow="True">
+            <VerticalStackLayout>
+                <Label Text="Editando la informacíon Producto" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" TextColor="#00796B" />
+
+                <Entry Placeholder="id producto" 
+                    PlaceholderColor="Gray"
+                    Text="{Binding NuevoProducto.idProducto}" 
+                    Margin="0,5" />
+                
+                <Entry Placeholder="Nombre del Producto" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding NuevoProducto.nombreProducto}" 
+                       Margin="0,5" />
+
+               
+                <Entry Placeholder="Descripción" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding NuevoProducto.descripcion}" 
+                       Margin="0,5" />
+
+                
+                <Entry Placeholder="Precio" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding NuevoProducto.precioProducto}" 
+                       Keyboard="Numeric" 
+                       Margin="0,5" />
+
+                
+                <Entry Placeholder="Categoria" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding NuevoProducto.categoria}" 
+                       Keyboard="Numeric" 
+                       Margin="0,5" />
+
+                
+                <Entry Placeholder="Imagen" 
+                       PlaceholderColor="Gray"
+                       Text="{Binding NuevoProducto.imagen}" 
+                       Margin="0,5" />
+
+                
+                <Button Text="Editar Producto"
+                        Command="{Binding EditarProductoCommand}" 
+                        BackgroundColor="#00796B"
+                        TextColor="White"
+                        Margin="0,15,0,0"
+                        CornerRadius="10"
+                        FontSize="Medium"/>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

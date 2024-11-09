@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplicacionTp6.Views.ProductoDetallePage"
+             xmlns:vm="clr-namespace:AplicacionTp6.ViewModels"
+             xmlns:models="clr-namespace:AplicacionTp6.Models"
+             x:DataType="vm:ProductoDetalleViewModel"
+             Title="{Binding Title}"
+             BackgroundColor="#FFFFFF">
+
+    <ScrollView>
+        <VerticalStackLayout Margin="20" Spacing="15">
+
+            
+            <Grid ColumnDefinitions="0.4*, 0.6*" RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnSpacing="10" RowSpacing="15">
+
+               
+                <Label Text="Nombre:" 
+                       Grid.Column="0" 
+                       VerticalOptions="Center"
+                       TextColor="#00796B"
+                       FontAttributes="Bold"
+                       HorizontalOptions="End" />
+
+                <Entry Text="{Binding Producto.nombreProducto}" 
+                       Grid.Column="1" 
+                       BackgroundColor="#F0F0F0"
+                       TextColor="#00796B"
+                       FontSize="16"
+                       Placeholder="Ingrese nombre"
+                       HorizontalOptions="Fill" />
+
+                
+                <Label Text="Descripción:" 
+                       Grid.Column="0" 
+                       Grid.Row="1" 
+                       VerticalOptions="Center"
+                       TextColor="#00796B"
+                       FontAttributes="Bold"
+                       HorizontalOptions="End" />
+
+                <Editor Text="{Binding Producto.descripcion}" 
+                        Grid.Column="1" 
+                        Grid.Row="1" 
+                        BackgroundColor="#F0F0F0"
+                        TextColor="#00796B"
+                        FontSize="16"
+                        HeightRequest="100"
+                        HorizontalOptions="Fill" />
+
+                
+                <Label Text="Precio:" 
+                       Grid.Column="0" 
+                       Grid.Row="2" 
+                       VerticalOptions="Center"
+                       TextColor="#00796B"
+                       FontAttributes="Bold"
+                       HorizontalOptions="End" />
+
+                <Entry Text="{Binding Producto.precioProducto}" 
+                       Grid.Column="1" 
+                       Grid.Row="2" 
+                       BackgroundColor="#F0F0F0"
+                       TextColor="#00796B"
+                       FontSize="16"
+                       Placeholder="$0.00"
+                       Keyboard="Numeric"
+                       HorizontalOptions="Fill" />
+
+                
+                <Label Text="Categoría:" 
+                       Grid.Column="0" 
+                       Grid.Row="3" 
+                       VerticalOptions="Center"
+                       TextColor="#00796B"
+                       FontAttributes="Bold"
+                       HorizontalOptions="End" />
+
+                <Entry Text="{Binding Producto.categoria}" 
+                       Grid.Column="1" 
+                       Grid.Row="3" 
+                       BackgroundColor="#F0F0F0"
+                       TextColor="#00796B"
+                       FontSize="16"
+                       Placeholder="Ingrese categoría"
+                       HorizontalOptions="Fill" />
+            </Grid>
+
+            
+            <Frame CornerRadius="20" HasShadow="True" Padding="10" BackgroundColor="White" Margin="0,20">
+                <Image Source="remera.png"
+                       HeightRequest="250"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center"/>
+            </Frame>
+
+            
+            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="15" Margin="0,10">
+
+                <Button Text="Editar"
+                        Command="{Binding GoEditarCommand}"
+                        BackgroundColor="#0288D1"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="20"
+                        HorizontalOptions="Fill"
+                        Grid.Column="0" />
+
+                <Button Text="Eliminar"
+                        Command="{Binding DeleteProductCommand}"
+                        BackgroundColor="#D32F2F"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="20"
+                        HorizontalOptions="Fill"
+                        Grid.Column="1" />
+
+                <Button Text="Volver a Lista"
+                        Command="{Binding GoBackCommand}"
+                        BackgroundColor="#F57C00"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="20"
+                        HorizontalOptions="Fill"
+                        Grid.Column="2" />
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
